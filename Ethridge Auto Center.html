@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethridge Auto Center | Auto Repair & Maintenance in Colleyville, TX</title>
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navyHeader: '#0f2b46',
+                        maroonNav: '#7a1c1c',
+                        maroonNavHover: '#5a1313',
+                        goldAccent: '#d4af37',
+                        lightGreyBg: '#f4f6f8',
+                        boxBorder: '#bcc7d1',
+                        darkText: '#1c2833'
+                    },
+                    fontFamily: {
+                        serifHeader: ['Georgia', 'Times New Roman', 'serif'],
+                        sansBody: ['Arial', 'Helvetica', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #e2e7ec;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1c2833;
+        }
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #a3b1bf;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.18);
+        }
+        .navy-header {
+            background: linear-gradient(180deg, #163c61 0%, #0f2b46 100%);
+        }
+        .maroon-nav {
+            background: linear-gradient(180deg, #8c2020 0%, #6e1717 100%);
+        }
+        .classic-box {
+            background-color: #f9fbfd;
+            border: 1px solid #c5d0da;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.06);
+        }
+        .btn-maroon {
+            background: linear-gradient(180deg, #8c2020 0%, #6e1717 100%);
+            border: 1px solid #4a0f0f;
+            color: #ffffff;
+            text-shadow: 1px 1px 1px #000;
+        }
+        .btn-maroon:hover {
+            background: linear-gradient(180deg, #a32727 0%, #801c1c 100%);
+        }
+        .btn-gold {
+            background: linear-gradient(180deg, #f3d052 0%, #d4af37 100%);
+            border: 1px solid #9e7f1b;
+            color: #0f2b46;
+            font-weight: bold;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(180deg, #fce075 0%, #e2be44 100%);
+        }
+    </style>
+</head>
+<body class="py-0 sm:py-4">
+
+    <div class="main-container">
+
+        <!-- Top Announcement & Contact Bar -->
+        <div class="bg-slate-800 text-slate-200 text-xs py-2 px-4 border-b border-slate-600">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-3">
+                    <span><i class="fa-solid fa-location-dot text-goldAccent mr-1"></i> 6007 Colleyville Blvd, Colleyville, TX 76034</span>
+                    <span class="hidden md:inline text-slate-500">|</span>
+                    <span class="hidden md:inline"><i class="fa-solid fa-clock text-goldAccent mr-1"></i> Mon - Fri: 7:30 AM - 5:00 PM</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="text-goldAccent font-bold"><i class="fa-solid fa-star"></i> 4.8 Stars (150+ Reviews)</span>
+                    <a href="tel:8174880361" class="font-bold text-white hover:text-goldAccent"><i class="fa-solid fa-phone text-goldAccent mr-1"></i> (817) 488-0361</a>
+                </div>
+            </div>
+        </div>
+
+        <header class="navy-header text-white p-6 border-b-4 border-goldAccent">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3">
+                        <div class="bg-goldAccent p-3 rounded text-navyHeader text-3xl font-black shadow-md border border-amber-200">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-wide uppercase font-serifHeader text-white" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">
+                                Ethridge Auto Center
+                            </h1>
+                            <p class="text-amber-200 text-xs sm:text-sm font-bold uppercase tracking-wider mt-0.5">
+                                Honest, High-Quality Auto Care in Colleyville Since the 1980s
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call Box -->
+                <div class="bg-black/25 p-4 rounded border border-slate-500 text-center min-w-[260px]">
+                    <span class="block text-xs uppercase font-bold text-amber-200">Speak With Our Shop Directly</span>
+                    <a href="tel:8174880361" class="text-2xl sm:text-3xl font-black text-white hover:text-goldAccent transition block mt-1" style="text-shadow: 1px 1px 2px #000;">
+                        (817) 488-0361
+                    </a>
+                    <span class="block text-[11px] text-slate-300 mt-0.5">Craig, Kim, & Kathy are Here to Help</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="maroon-nav text-white border-y border-red-950 font-bold text-xs sm:text-sm">
+            <div class="flex flex-wrap justify-center md:justify-start">
+                <a href="#home" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a href="#services" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-gears"></i> Services
+                </a>
+                <a href="#estimator" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-calculator"></i> Cost Estimator
+                </a>
+                <a href="#about" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-user-shield"></i> About Us
+                </a>
+                <a href="#testimonials" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-comment-dots"></i> Reviews
+                </a>
+                <a href="#faq" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-question"></i> FAQ
+                </a>
+                <a href="#contact" class="px-4 py-3 hover:bg-black/20 border-r border-red-900 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-envelope"></i> Contact & Hours
+                </a>
+            </div>
+        </nav>
+
+        <section id="home" class="p-6 bg-slate-100 border-b border-slate-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div class="lg:col-span-8 space-y-4">
+                    <div class="inline-block bg-amber-100 text-navyHeader text-xs font-bold px-3 py-1 uppercase rounded border border-amber-300">
+                        Family-Owned & Local Colleyville Business
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-serifHeader font-extrabold text-navyHeader leading-tight">
+                        Complete Auto Repairs & Maintenance You Can Depend On
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        At Ethridge Auto Center, we pride ourselves on delivering fair, transparent, and expert mechanical care. Whether you need routine scheduled maintenance, brake replacements, A/C service, or an expert pre-purchase inspection, our team takes care of your car like it's our own.
+                    </p>
+                    
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <button onclick="openBookingModal()" class="btn-maroon font-bold px-5 py-2.5 rounded text-xs sm:text-sm shadow flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-check"></i> Schedule an Appointment
+                        </button>
+                        <a href="tel:8174880361" class="btn-gold font-bold px-5 py-2.5 rounded text-xs sm:text-sm shadow flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Call (817) 488-0361
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Trust Box -->
+                <div class="lg:col-span-4 classic-box p-4 rounded text-center space-y-3">
+                    <h3 class="text-base font-bold text-navyHeader font-serifHeader border-b border-slate-300 pb-2">
+                        Why Choose Ethridge?
+                    </h3>
+                    <ul class="text-xs text-left space-y-2 font-medium text-slate-700">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-700"></i> Family Owned & Operated</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-700"></i> Clear & Honest Estimates</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-700"></i> ASE-Certified Technicians</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-700"></i> Pre-Purchase Vehicle Inspections</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-700"></i> Wheelchair Accessible Entrance</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="estimator" class="p-6 bg-slate-50 border-b border-slate-300">
+            <div class="classic-box p-6 rounded">
+                <div class="border-b-2 border-navyHeader pb-3 mb-4">
+                    <h2 class="text-2xl font-serifHeader font-bold text-navyHeader">
+                        <i class="fa-solid fa-calculator text-maroonNav mr-2"></i> Auto Repair Quick Cost Estimator
+                    </h2>
+                    <p class="text-xs text-slate-600">Select your vehicle type and needed service to see an estimated price range.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                    <div class="md:col-span-7 space-y-4 text-xs">
+                        <div>
+                            <label class="block font-bold text-navyHeader mb-1">1. Select Vehicle Type:</label>
+                            <select id="vehicleTypeSelect" onchange="calculateEstimate()" class="w-full p-2 border border-slate-400 rounded bg-white">
+                                <option value="sedan">Sedan / Hatchback</option>
+                                <option value="suv">SUV / Crossover</option>
+                                <option value="truck">Pickup Truck / Van</option>
+                                <option value="luxury">European / Luxury Vehicle</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-navyHeader mb-1">2. Select Service Required:</label>
+                            <select id="serviceTypeSelect" onchange="calculateEstimate()" class="w-full p-2 border border-slate-400 rounded bg-white">
+                                <option value="oil">Synthetic Blend Oil & Filter Change</option>
+                                <option value="brakes">Brake Pad & Rotor Service (Per Axle)</option>
+                                <option value="ac">A/C System Leak Test & Performance Check</option>
+                                <option value="inspection">Pre-Purchase Used Car Inspection</option>
+                                <option value="diagnostic">Check Engine Light Diagnostic</option>
+                                <option value="suspension">Suspension Inspection & Alignment</option>
+                            </select>
+                        </div>
+
+                        <p class="text-[11px] text-slate-500 italic">
+                            *Note: Estimated price ranges are for informational purposes. Final quotes are confirmed after physical shop inspection.
+                        </p>
+                    </div>
+
+                    <!-- Estimate Display Box -->
+                    <div class="md:col-span-5 bg-navyHeader text-white p-5 rounded border-2 border-goldAccent text-center">
+                        <span class="text-xs uppercase font-bold text-amber-200">Estimated Cost Range:</span>
+                        <div id="priceEstimateDisplay" class="text-3xl font-extrabold text-goldAccent my-2 font-serifHeader">
+                            $45 - $75
+                        </div>
+                        <p id="serviceNotesDisplay" class="text-xs text-slate-200 mb-4">
+                            Includes oil filter replacement and fluid top-off.
+                        </p>
+                        <button onclick="openBookingModal()" class="btn-gold text-xs font-bold w-full py-2 rounded uppercase">
+                            Schedule This Service
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="p-6 bg-white border-b border-slate-300">
+            <div class="border-b-2 border-maroonNav pb-3 mb-6">
+                <h2 class="text-2xl font-serifHeader font-bold text-navyHeader">
+                    <i class="fa-solid fa-wrench text-maroonNav mr-2"></i> Our Auto Repair & Maintenance Services
+                </h2>
+                <p class="text-xs text-slate-600">Full-service auto care for all domestic and foreign vehicles in Colleyville.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Service Card 1 -->
+                <div class="classic-box p-4 rounded">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
+                        <i class="fa-solid fa-compact-disc text-maroonNav text-xl"></i>
+                        <h3 class="font-bold font-serifHeader text-navyHeader text-base">Brake Services</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                        Complete brake pad replacements, rotor resurfacing, caliper repairs, and brake fluid flushes to ensure optimal stopping power.
+                    </p>
+                    <button onclick="openBookingModal()" class="text-xs font-bold text-maroonNav hover:underline flex items-center gap-1">
+                        Book Brake Service <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="classic-box p-4 rounded">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
+                        <i class="fa-solid fa-microchip text-maroonNav text-xl"></i>
+                        <h3 class="font-bold font-serifHeader text-navyHeader text-base">Engine Diagnostics</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                        Computerized engine scan diagnostics for check engine lights, rough idling, stalling, or electronic fault codes.
+                    </p>
+                    <button onclick="openBookingModal()" class="text-xs font-bold text-maroonNav hover:underline flex items-center gap-1">
+                        Book Diagnostics <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="classic-box p-4 rounded">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
+                        <i class="fa-solid fa-snowflake text-maroonNav text-xl"></i>
+                        <h3 class="font-bold font-serifHeader text-navyHeader text-base">A/C & Heating Repair</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                        Refrigerant leak detection, compressor replacements, heater core service, and climate control repairs for hot Texas summers.
+                    </p>
+                    <button onclick="openBookingModal()" class="text-xs font-bold text-maroonNav hover:underline flex items-center gap-1">
+                        Book A/C Repair <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="classic-box p-4 rounded">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
+                        <i class="fa-solid fa-car-side text-maroonNav text-xl"></i>
+                        <h3 class="font-bold font-serifHeader text-navyHeader text-base">Pre-Purchase Inspection</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                        Comprehensive used car safety and mechanical evaluations before you purchase a vehicle so you avoid unexpected surprises.
+                    </p>
+                    <button onclick="openBookingModal()" class="text-xs font-bold text-maroonNav hover:underline flex items-center gap-1">
+                        Book Inspection <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="classic-box p-4 rounded">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
+                        <i class="fa-solid fa-oil-can text-maroonNav text-xl"></i>
+                        <h3 class="font-bold font-serifHeader text-navyHeader text-base">Scheduled Maintenance</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                        Factory 30k/60k/90k mile services, oil changes, spark plug replacements, transmission fluid flushes, and filter changes.
+                    </p>
+                    <button onclick="openBookingModal()" class="text-xs font-bold text-maroonNav hover:underline flex items-center gap-1">
+                        Book Maintenance <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="classic-box p-4 rounded">
+                    <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-2">
+                        <i class="fa-solid fa-car-burst text-maroonNav text-xl"></i>
+                        <h3 class="font-bold font-serifHeader text-navyHeader text-base">Steering & Suspension</h3>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                        Strut and shock replacements, ball joint repairs, wheel alignment adjustments, and power steering fluid service.
+                    </p>
+                    <button onclick="openBookingModal()" class="text-xs font-bold text-maroonNav hover:underline flex items-center gap-1">
+                        Book Suspension Service <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="p-6 bg-slate-50 border-b border-slate-300">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 space-y-3">
+                    <h2 class="text-2xl font-serifHeader font-bold text-navyHeader border-b-2 border-goldAccent pb-2">
+                        Family-Owned Local Service You Can Trust
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        Since opening our doors in Colleyville in the 1980s, <strong>Ethridge Auto Center</strong> has remained committed to honest dealings, fair pricing, and reliable craftsmanship.
+                    </p>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        When you call or visit our shop, you'll speak directly with our team—including <strong>Craig, Kim, and Kathy</strong>—who are always ready to answer your questions and guide you through your vehicle's service options without pushy upsells.
+                    </p>
+
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-3 text-xs text-slate-800 font-medium">
+                        "Our business is built on long-term relationships with our Colleyville neighbors. We earn your trust one repair at a time."
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 classic-box p-4 rounded text-center">
+                    <i class="fa-solid fa-users-gear text-5xl text-navyHeader mb-3"></i>
+                    <h3 class="font-serifHeader font-bold text-navyHeader text-base mb-1">Ethridge Auto Family</h3>
+                    <p class="text-xs text-slate-600">Proudly serving Colleyville, Grapevine, Southlake, and Bedford drivers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="p-6 bg-white border-b border-slate-300">
+            <div class="border-b-2 border-navyHeader pb-3 mb-6">
+                <h2 class="text-2xl font-serifHeader font-bold text-navyHeader">
+                    <i class="fa-solid fa-star text-goldAccent mr-2"></i> What Our Customers Say
+                </h2>
+                <p class="text-xs text-slate-600">Real feedback from local Colleyville vehicle owners.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <div class="classic-box p-4 rounded">
+                    <div class="text-amber-500 text-sm mb-2">★★★★★</div>
+                    <p class="text-xs text-slate-700 italic mb-3">
+                        "Craig and the team at Ethridge Auto Center are as honest as they come. They diagnosed my check engine light quickly and didn't try to charge me for unnecessary parts."
+                    </p>
+                    <p class="text-xs font-bold text-navyHeader border-t border-slate-200 pt-2">— Mark T., Colleyville Resident</p>
+                </div>
+
+                <div class="classic-box p-4 rounded">
+                    <div class="text-amber-500 text-sm mb-2">★★★★★</div>
+                    <p class="text-xs text-slate-700 italic mb-3">
+                        "Kim and Kathy up front are always so polite and helpful. Had them perform a pre-purchase inspection on a used truck and they saved me from buying a money pit!"
+                    </p>
+                    <p class="text-xs font-bold text-navyHeader border-t border-slate-200 pt-2">— Sarah L., Grapevine TX</p>
+                </div>
+
+                <div class="classic-box p-4 rounded">
+                    <div class="text-amber-500 text-sm mb-2">★★★★★</div>
+                    <p class="text-xs text-slate-700 italic mb-3">
+                        "I've brought all three of our family vehicles here for brake work and A/C service. Fair pricing, quick turnaround, and trustworthy mechanics."
+                    </p>
+                    <p class="text-xs font-bold text-navyHeader border-t border-slate-200 pt-2">— David R., Local Customer</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="faq" class="p-6 bg-slate-50 border-b border-slate-300">
+            <div class="border-b-2 border-maroonNav pb-3 mb-4">
+                <h2 class="text-2xl font-serifHeader font-bold text-navyHeader">
+                    <i class="fa-solid fa-circle-question text-maroonNav mr-2"></i> Frequently Asked Questions
+                </h2>
+            </div>
+
+            <div class="space-y-3">
+                <div class="classic-box rounded overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full text-left p-3 text-xs sm:text-sm font-bold text-navyHeader bg-slate-100 hover:bg-slate-200 flex justify-between items-center">
+                        <span>Do I need an appointment or do you accept walk-ins?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-500"></i>
+                    </button>
+                    <div id="faq-ans-1" class="hidden p-3 text-xs text-slate-700 bg-white border-t border-slate-200">
+                        While we do accept walk-ins whenever possible, we recommend scheduling an appointment in advance so we can reserve a technician slot for your vehicle.
+                    </div>
+                </div>
+
+                <div class="classic-box rounded overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full text-left p-3 text-xs sm:text-sm font-bold text-navyHeader bg-slate-100 hover:bg-slate-200 flex justify-between items-center">
+                        <span>What is included in a pre-purchase vehicle inspection?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-500"></i>
+                    </button>
+                    <div id="faq-ans-2" class="hidden p-3 text-xs text-slate-700 bg-white border-t border-slate-200">
+                        Our pre-purchase inspection includes a thorough multi-point check of the engine, brakes, steering, suspension, fluid condition, tires, undercarriage leak inspection, and computer fault code scan.
+                    </div>
+                </div>
+
+                <div class="classic-box rounded overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full text-left p-3 text-xs sm:text-sm font-bold text-navyHeader bg-slate-100 hover:bg-slate-200 flex justify-between items-center">
+                        <span>What payment methods do you accept?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-500"></i>
+                    </button>
+                    <div id="faq-ans-3" class="hidden p-3 text-xs text-slate-700 bg-white border-t border-slate-200">
+                        We accept Visa, MasterCard, Discover, American Express, Debit Cards, and Cash.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="p-6 bg-white">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+                <!-- Location & Contact info -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="border-b-2 border-navyHeader pb-2">
+                        <h2 class="text-xl font-serifHeader font-bold text-navyHeader">Shop Location & Hours</h2>
+                    </div>
+
+                    <div class="classic-box p-4 rounded text-xs text-slate-700 space-y-3">
+                        <p class="font-bold text-sm text-navyHeader">
+                            <i class="fa-solid fa-location-dot mr-1 text-maroonNav"></i> Ethridge Auto Center
+                        </p>
+                        <p>
+                            6007 Colleyville Blvd<br>
+                            Colleyville, TX 76034
+                        </p>
+
+                        <p class="pt-2 border-t border-slate-200">
+                            <strong>Direct Phone:</strong> <a href="tel:8174880361" class="text-maroonNav font-bold hover:underline">(817) 488-0361</a>
+                        </p>
+
+                        <!-- Hours Table -->
+                        <div class="pt-2">
+                            <h3 class="font-bold text-navyHeader mb-1">Hours of Operation:</h3>
+                            <table class="w-full text-left border-collapse border border-slate-300">
+                                <thead>
+                                    <tr class="bg-slate-100 border-b border-slate-300">
+                                        <th class="p-1.5 border-r border-slate-300 font-bold">Day</th>
+                                        <th class="p-1.5 font-bold">Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-slate-200">
+                                        <td class="p-1.5 border-r border-slate-200 font-medium">Monday - Friday</td>
+                                        <td class="p-1.5 font-bold text-emerald-800">7:30 AM - 5:00 PM</td>
+                                    </tr>
+                                    <tr class="bg-slate-50">
+                                        <td class="p-1.5 border-r border-slate-200 font-medium">Saturday & Sunday</td>
+                                        <td class="p-1.5 font-bold text-rose-800">Closed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Directions & Message Form -->
+                <div class="md:col-span-7 space-y-4">
+                    <div class="border-b-2 border-navyHeader pb-2">
+                        <h2 class="text-xl font-serifHeader font-bold text-navyHeader">Send Us a Message</h2>
+                    </div>
+
+                    <form onsubmit="handleContactSubmit(event)" class="classic-box p-4 rounded text-xs space-y-3">
+                        <div>
+                            <label class="block font-bold text-navyHeader mb-1">Your Name *</label>
+                            <input type="text" required class="w-full p-2 border border-slate-300 rounded focus:border-navyHeader">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block font-bold text-navyHeader mb-1">Phone Number *</label>
+                                <input type="tel" required class="w-full p-2 border border-slate-300 rounded focus:border-navyHeader">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-navyHeader mb-1">Email Address</label>
+                                <input type="email" class="w-full p-2 border border-slate-300 rounded focus:border-navyHeader">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-navyHeader mb-1">Vehicle Year, Make, & Model</label>
+                            <input type="text" placeholder="e.g. 2018 Ford F-150" class="w-full p-2 border border-slate-300 rounded focus:border-navyHeader">
+                        </div>
+
+                        <div>
+                            <label class="block font-bold text-navyHeader mb-1">How Can We Help You? *</label>
+                            <textarea rows="3" required placeholder="Describe what issues or maintenance your vehicle needs..." class="w-full p-2 border border-slate-300 rounded focus:border-navyHeader"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-maroon font-bold w-full py-2.5 rounded text-xs uppercase">
+                            Send Message to Ethridge Auto
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="navy-header text-white p-6 border-t-4 border-goldAccent text-center text-xs space-y-2">
+            <p class="font-serifHeader text-base font-bold text-amber-200">ETHRIDGE AUTO CENTER • COLLEYVILLE, TX</p>
+            <p class="text-slate-300">6007 Colleyville Blvd, Colleyville, TX 76034 | Phone: (817) 488-0361</p>
+            <p class="text-slate-400 text-[11px] pt-2 border-t border-slate-700">
+                © <span id="currentYear"></span> Ethridge Auto Center. All Rights Reserved. Family-Owned Auto Repair Shop.
+            </p>
+        </footer>
+
+    </div>
+
+    <div id="bookingModal" class="fixed inset-0 bg-black/70 hidden flex items-center justify-center p-4 z-50">
+        <div class="classic-box bg-white max-w-md w-full p-5 rounded shadow-2xl relative">
+            <button onclick="closeBookingModal()" class="absolute top-2 right-3 text-slate-600 font-bold text-2xl hover:text-maroonNav">&times;</button>
+            <h3 class="text-lg font-serifHeader font-bold text-navyHeader border-b-2 border-goldAccent pb-2 mb-3">
+                Request Service Appointment
+            </h3>
+            
+            <form onsubmit="handleBookingSubmit(event)" class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-bold text-navyHeader mb-1">Full Name *</label>
+                    <input type="text" required class="w-full p-2 border border-slate-300 rounded">
+                </div>
+                <div>
+                    <label class="block font-bold text-navyHeader mb-1">Phone Number *</label>
+                    <input type="tel" required class="w-full p-2 border border-slate-300 rounded">
+                </div>
+                <div>
+                    <label class="block font-bold text-navyHeader mb-1">Vehicle Info (Year / Make / Model) *</label>
+                    <input type="text" placeholder="e.g. 2016 Honda Accord" required class="w-full p-2 border border-slate-300 rounded">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block font-bold text-navyHeader mb-1">Preferred Date</label>
+                        <input type="date" required class="w-full p-2 border border-slate-300 rounded">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-navyHeader mb-1">Preferred Time</label>
+                        <select class="w-full p-2 border border-slate-300 rounded">
+                            <option>Morning (7:30 AM - 11:30 AM)</option>
+                            <option>Afternoon (12:00 PM - 4:00 PM)</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-bold text-navyHeader mb-1">Requested Service</label>
+                    <select class="w-full p-2 border border-slate-300 rounded">
+                        <option>Oil & Filter Service</option>
+                        <option>Brake Service / Inspection</option>
+                        <option>A/C & Heating Repair</option>
+                        <option>Check Engine Diagnostic</option>
+                        <option>Pre-Purchase Inspection</option>
+                        <option>Other Service</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-maroon font-bold w-full py-2.5 rounded text-xs uppercase">
+                    Submit Appointment Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-navyHeader text-white p-4 rounded border-2 border-goldAccent shadow-2xl hidden z-50 text-xs">
+        <div class="font-bold text-goldAccent text-sm mb-1" id="toastTitle">Success</div>
+        <div id="toastMsg" class="text-slate-200">Message processed successfully.</div>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Estimator data pricing table
+        const priceRanges = {
+            oil: {
+                sedan: { range: '$45 - $65', note: 'Includes standard synthetic blend oil & filter replacement.' },
+                suv: { range: '$55 - $75', note: 'Includes up to 6 quarts synthetic blend oil & filter.' },
+                truck: { range: '$65 - $85', note: 'Includes heavy-duty filter & up to 7 quarts oil.' },
+                luxury: { range: '$85 - $125', note: 'Includes full synthetic European spec oil & OEM filter.' }
+            },
+            brakes: {
+                sedan: { range: '$180 - $240', note: 'Price per axle (pads & rotor inspection/service).' },
+                suv: { range: '$210 - $280', note: 'Price per axle for SUV grade heavy-duty ceramic pads.' },
+                truck: { range: '$240 - $320', note: 'Price per axle for heavy truck braking components.' },
+                luxury: { range: '$290 - $420', note: 'Price per axle using OEM specification rotors & pads.' }
+            },
+            ac: {
+                sedan: { range: '$89 - $140', note: 'Full system evacuation, leak test, & performance check.' },
+                suv: { range: '$99 - $160', note: 'Dual-zone climate system check & pressure testing.' },
+                truck: { range: '$99 - $160', note: 'System leak check & refrigerant pressure inspection.' },
+                luxury: { range: '$130 - $210', note: 'Specialized climate diagnostic scan & leak test.' }
+            },
+            inspection: {
+                sedan: { range: '$110 - $140', note: 'Comprehensive multi-point used vehicle inspection.' },
+                suv: { range: '$120 - $150', note: 'Full bumper-to-bumper pre-purchase safety evaluation.' },
+                truck: { range: '$125 - $160', note: 'Includes 4x4 drivetrain and suspension inspection.' },
+                luxury: { range: '$150 - $200', note: 'Includes computerized module scan & test drive.' }
+            },
+            diagnostic: {
+                sedan: { range: '$95 - $130', note: 'Full computerized fault code scan & pinpoint test.' },
+                suv: { range: '$95 - $130', note: 'Engine fault diagnostic & electrical circuit check.' },
+                truck: { range: '$95 - $130', note: 'Computer scan, sensor check, & diagnostic report.' },
+                luxury: { range: '$120 - $160', note: 'Advanced OEM scanner diagnostic for luxury modules.' }
+            },
+            suspension: {
+                sedan: { range: '$120 - $250', note: 'Suspension check & alignment adjustment.' },
+                suv: { range: '$140 - $280', note: 'Heavy SUV strut, shock, & alignment evaluation.' },
+                truck: { range: '$150 - $320', note: 'Truck steering linkage check & wheel alignment.' },
+                luxury: { range: '$180 - $380', note: 'Air suspension / electronic shock diagnostic.' }
+            }
+        };
+
+        function calculateEstimate() {
+            const vType = document.getElementById('vehicleTypeSelect').value;
+            const sType = document.getElementById('serviceTypeSelect').value;
+
+            const selectedData = priceRanges[sType][vType];
+
+            document.getElementById('priceEstimateDisplay').textContent = selectedData.range;
+            document.getElementById('serviceNotesDisplay').textContent = selectedData.note;
+        }
+
+        function toggleFaq(index) {
+            const ans = document.getElementById(`faq-ans-${index}`);
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+            } else {
+                ans.classList.add('hidden');
+            }
+        }
+
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMsg').textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            closeBookingModal();
+            showToast('Appointment Requested', 'Thank you! The team at Ethridge Auto Center will call you to confirm your requested date.');
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Message Sent', 'Thank you for reaching out! Craig, Kim, or Kathy will respond to your message shortly.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
