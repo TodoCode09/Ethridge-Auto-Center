@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jesús Family Restaurant — Fort Worth, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF1DD;
+    --paper-2:#F3E4C4;
+    --ink:#2B1810;
+    --chile:#B23A2E;
+    --chile-dark:#8C2C22;
+    --marigold:#E8A33D;
+    --talavera:#1D6F6B;
+    --talavera-dark:#154F4C;
+    --cactus:#5C7A3D;
+    --line:rgba(43,24,16,0.15);
+    --shadow: 4px 4px 0 rgba(43,24,16,0.12);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Libre Franklin', -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Alfa Slab One', serif;
+    font-weight:400;
+    line-height:1.1;
+    margin:0;
+    letter-spacing:0.2px;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- Talavera tile pattern strip ---------- */
+  .tile-strip{
+    height:14px;
+    width:100%;
+    background:
+      repeating-linear-gradient(45deg, var(--talavera) 0 7px, var(--marigold) 7px 14px);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--paper);
+    border-bottom:3px solid var(--ink);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 28px;
+    max-width:1120px;
+    margin:0 auto;
+    gap:16px;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+  }
+  .brand .name{
+    font-family:'Alfa Slab One', serif;
+    font-size:1.5rem;
+    color:var(--chile);
+  }
+  .brand .sub{
+    font-size:0.62rem;
+    letter-spacing:1.5px;
+    color:var(--ink);
+    margin-top:4px;
+    font-weight:700;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+    margin:0;
+    padding:0;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  nav ul a{
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:3px;
+    transition:border-color .15s ease;
+  }
+  nav ul a:hover, nav ul a:focus-visible{border-color:var(--chile);}
+  .call-btn{
+    background:var(--chile);
+    color:var(--paper);
+    text-decoration:none;
+    font-weight:700;
+    padding:10px 18px;
+    border-radius:2px;
+    box-shadow:var(--shadow);
+    white-space:nowrap;
+    font-size:0.92rem;
+  }
+  .call-btn:hover{background:var(--chile-dark);}
+  .menu-toggle{display:none;}
+
+  @media (max-width:820px){
+    nav ul{display:none;}
+    .menu-toggle{
+      display:block;
+      background:none;border:2px solid var(--ink);
+      border-radius:2px;
+      padding:8px 10px;
+      font-size:1.1rem;
+    }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:64px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: radial-gradient(circle at 18% 30%, rgba(232,163,61,0.10), transparent 45%),
+                       radial-gradient(circle at 85% 75%, rgba(29,111,107,0.18), transparent 50%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.35fr 0.9fr;
+    gap:44px;
+    align-items:center;
+  }
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;}
+  }
+  .eyebrow-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--marigold);
+    font-weight:700;
+    font-size:0.95rem;
+    margin-bottom:18px;
+  }
+  .status-dot{
+    width:9px;height:9px;border-radius:50%;
+    background:#c74a3d;
+    box-shadow:0 0 0 3px rgba(199,74,61,0.25);
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    color:var(--paper);
+    animation:riseIn .7s ease both;
+  }
+  .hero h1 .accent{color:var(--marigold);}
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .hero p.lede{
+    margin-top:20px;
+    max-width:52ch;
+    font-size:1.12rem;
+    color:#EFE3C9;
+  }
+  .stat-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+    margin-top:28px;
+    font-size:0.98rem;
+    color:#EFE3C9;
+  }
+  .stat-row strong{color:var(--marigold); font-family:'Alfa Slab One'; font-weight:400; font-size:1.15rem;}
+  .stars{color:var(--marigold); letter-spacing:2px;}
+  .cta-row{
+    margin-top:34px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:2px;
+    font-weight:700;
+    text-decoration:none;
+    font-size:0.98rem;
+  }
+  .btn-primary{background:var(--chile); color:var(--paper); box-shadow:4px 4px 0 rgba(0,0,0,0.35);}
+  .btn-primary:hover{background:var(--chile-dark);}
+  .btn-outline{border:2px solid var(--paper); color:var(--paper);}
+  .btn-outline:hover{background:rgba(251,241,221,0.1);}
+
+  /* hero medallion card */
+  .medallion{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:4px;
+    padding:28px;
+    box-shadow:8px 8px 0 rgba(0,0,0,0.35);
+    border:3px solid var(--ink);
+  }
+  .medallion h3{font-size:1.05rem; color:var(--chile); margin-bottom:14px;}
+  .medallion ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .medallion li{display:flex; justify-content:space-between; font-size:0.95rem; border-bottom:1px dashed var(--line); padding-bottom:10px;}
+  .medallion li:last-child{border-bottom:none;padding-bottom:0;}
+  .medallion .k{color:#6b5544; font-weight:600;}
+  .medallion .v{font-weight:700;}
+
+  /* ---------- Scalloped divider (banner cut) ---------- */
+  .scallop{
+    height:26px;
+    background: var(--talavera);
+    -webkit-mask-image: radial-gradient(circle at 13px 0, transparent 13px, black 13.5px);
+    mask-image: radial-gradient(circle at 13px 0, transparent 13px, black 13.5px);
+    -webkit-mask-size: 26px 26px;
+    mask-size: 26px 26px;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+  }
+
+  /* ---------- Section headings ---------- */
+  .sec-head{
+    max-width:60ch;
+    margin-bottom:36px;
+  }
+  .sec-head h2{
+    font-size:clamp(1.9rem,4vw,2.6rem);
+    color:var(--chile-dark);
+  }
+  .sec-head p{margin-top:12px; color:#5b4636; font-size:1.05rem;}
+
+  /* ---------- About ---------- */
+  .about{background:var(--paper); padding:72px 0;}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:48px;
+    align-items:start;
+  }
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+  .about-text p{margin:0 0 16px; color:#3a281c; max-width:60ch;}
+  .about-text p:last-child{margin-bottom:0;}
+
+  .service-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  @media (max-width:600px){.service-cards{grid-template-columns:1fr;}}
+  .service-card{
+    background:var(--paper-2);
+    border:2px solid var(--ink);
+    border-radius:2px;
+    padding:20px 16px;
+    text-align:center;
+  }
+  .service-card svg{margin:0 auto 10px; width:40px;height:40px;}
+  .service-card h4{font-family:'Alfa Slab One'; font-weight:400; font-size:1rem; color:var(--chile-dark); margin:0 0 6px;}
+  .service-card p{margin:0; font-size:0.86rem; color:#5b4636;}
+
+  /* ---------- Menu ---------- */
+  .menu{background:var(--ink); color:var(--paper); padding:76px 0;}
+  .menu .sec-head h2{color:var(--marigold);}
+  .menu .sec-head p{color:#d9c7a4;}
+  .menu-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px 56px;
+  }
+  @media (max-width:760px){.menu-grid{grid-template-columns:1fr;}}
+  .menu-cat h3{
+    color:var(--marigold);
+    font-size:1.2rem;
+    border-bottom:2px solid var(--talavera);
+    padding-bottom:10px;
+    margin-bottom:16px;
+  }
+  .menu-item{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    padding:11px 0;
+    border-bottom:1px dashed rgba(251,241,221,0.18);
+  }
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item .mi-name{font-weight:600;}
+  .menu-item .mi-desc{display:block; font-size:0.84rem; color:#c9b58f; font-weight:400; margin-top:2px;}
+  .menu-item .mi-price{font-family:'Alfa Slab One'; color:var(--marigold); white-space:nowrap; font-size:0.95rem;}
+  .menu-note{margin-top:36px; font-size:0.88rem; color:#c9b58f; max-width:60ch;}
+
+  /* ---------- Reviews ---------- */
+  .reviews{background:var(--paper-2); padding:76px 0;}
+  .review-top{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+  }
+  .score{
+    font-family:'Alfa Slab One';
+    font-size:4rem;
+    color:var(--chile);
+    line-height:1;
+  }
+  .score-meta .stars{color:var(--chile); font-size:1.2rem;}
+  .score-meta p{margin:6px 0 0; color:#5b4636; font-size:0.95rem;}
+  .review-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:860px){.review-cards{grid-template-columns:1fr;}}
+  .review-card{
+    background:var(--paper);
+    border-left:4px solid var(--talavera);
+    padding:22px;
+    border-radius:2px;
+    box-shadow:var(--shadow);
+  }
+  .review-card .stars{color:var(--chile); font-size:0.85rem; margin-bottom:10px; display:block;}
+  .review-card p{margin:0 0 14px; color:#3a281c; font-size:0.95rem;}
+  .review-card .who{font-weight:700; font-size:0.85rem; color:var(--talavera-dark);}
+  .review-disclaimer{margin-top:24px; font-size:0.8rem; color:#856a52;}
+
+  /* ---------- Location ---------- */
+  .location{background:var(--paper); padding:76px 0;}
+  .loc-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+  @media (max-width:820px){.loc-grid{grid-template-columns:1fr;}}
+  .info-card{
+    border:2px solid var(--ink);
+    border-radius:2px;
+    padding:26px;
+    background:var(--paper-2);
+  }
+  .info-card h3{font-size:1.15rem; color:var(--chile-dark); margin-bottom:16px;}
+  .info-row{display:flex; gap:12px; margin-bottom:14px; font-size:0.95rem;}
+  .info-row svg{flex-shrink:0; width:20px; height:20px; margin-top:2px; color:var(--talavera);}
+  .info-row a{text-decoration:underline; text-underline-offset:3px;}
+  .hours-table{width:100%; border-collapse:collapse; font-size:0.94rem;}
+  .hours-table td{padding:7px 0; border-bottom:1px dashed var(--line);}
+  .hours-table tr:last-child td{border-bottom:none;}
+  .hours-table td:first-child{font-weight:600; width:45%;}
+  .hours-table tr.today td{color:var(--chile); font-weight:700;}
+  .map-box{
+    border:2px solid var(--ink);
+    border-radius:2px;
+    background:
+      linear-gradient(135deg, rgba(29,111,107,0.08), rgba(232,163,61,0.10)),
+      var(--paper-2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 24px;
+    min-height:260px;
+    gap:14px;
+  }
+  .map-box svg{width:44px;height:44px;color:var(--chile);}
+  .map-box a.btn{margin-top:6px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink); color:#d9c7a4; padding:44px 0 26px;}
+  .foot-grid{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:24px;
+    padding-bottom:26px;
+    border-bottom:1px solid rgba(251,241,221,0.15);
+  }
+  .foot-brand .name{font-family:'Alfa Slab One'; color:var(--marigold); font-size:1.3rem;}
+  .foot-brand p{margin:8px 0 0; font-size:0.88rem; max-width:36ch;}
+  .foot-links{display:flex; gap:36px; flex-wrap:wrap;}
+  .foot-links div h5{margin:0 0 10px; font-size:0.82rem; letter-spacing:0.5px; color:#f1e2c2;}
+  .foot-links a{display:block; font-size:0.88rem; text-decoration:none; margin-bottom:8px; color:#d9c7a4;}
+  .foot-links a:hover{color:var(--marigold);}
+  .foot-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    padding-top:18px; font-size:0.8rem; color:#a8926f;
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--chile); color:var(--paper);
+    padding:10px 16px; z-index:100;
+  }
+  .skip-link:focus{left:12px; top:12px;}
+
+  :focus-visible{outline:3px solid var(--talavera); outline-offset:2px;}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="nav">
+    <a href="#main" class="brand" style="text-decoration:none;">
+      <span class="name">Jesús</span>
+      <span class="sub">FAMILY RESTAURANT · FORT WORTH</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#hours">Hours &amp; Location</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+    <a class="call-btn" href="tel:+18173320168">Call (817) 332-0168</a>
+  </div>
+</header>
+<div class="tile-strip" aria-hidden="true"></div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow-row">
+          <span class="status-dot" aria-hidden="true"></span>
+          Closed now · Opens 11 AM Tuesday
+        </div>
+        <h1>Enchiladas, fajitas &amp; <span class="accent">low &amp; slow barbecue</span> on South Main.</h1>
+        <p class="lede">A no-nonsense, family-run Tex-Mex kitchen dishing up made-to-order enchiladas and Mexican plates alongside barbecued brisket, ribs and sausage — the way Fort Worth likes it.</p>
+        <div class="stat-row">
+          <span><span class="stars" aria-hidden="true">★★★★☆</span> <strong>4.5</strong> (458 reviews)</span>
+          <span>Tex-Mex · Barbecue</span>
+          <span><strong>$10–20</strong> per person</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+18173320168">Call to order</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Jes%C3%BAs+Family+Restaurant+810+S+Main+St+Fort+Worth+TX+76104" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+
+      <div class="medallion">
+        <h3>Today at a glance</h3>
+        <ul>
+          <li><span class="k">Status</span><span class="v">Closed · opens 11 AM Tue</span></li>
+          <li><span class="k">Service</span><span class="v">Dine-in · Takeout · Delivery</span></li>
+          <li><span class="k">Price</span><span class="v">$10–20 / person</span></li>
+          <li><span class="k">Address</span><span class="v">810 S Main St</span></li>
+          <li><span class="k">Phone</span><span class="v">(817) 332-0168</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="scallop" aria-hidden="true"></div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <div class="sec-head" style="margin-bottom:20px;">
+          <h2>A family table on South Main</h2>
+        </div>
+        <p>Jesús Family Restaurant keeps things simple: honest Tex-Mex plates, a smoker running out back, and a dining room that has been feeding the neighborhood for years. There's no pretense here — just enchiladas rolled by hand, rice and beans done right, and brisket that's worth the wait.</p>
+        <p>Guests come back for the queso and stay for the two-meat combo plates, ordering the same way regulars in Fort Worth have for generations: dine in, call ahead for takeout, or get it delivered.</p>
+      </div>
+      <div class="service-cards">
+        <div class="service-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--chile-dark)"><rect x="8" y="20" width="32" height="16" rx="2"/><path d="M12 20v-4a6 6 0 0 1 6-6h12a6 6 0 0 1 6 6v4"/><line x1="14" y1="36" x2="14" y2="40"/><line x1="34" y1="36" x2="34" y2="40"/></svg>
+          <h4>Dine-in</h4>
+          <p>Full-service seating for the family, any night of the week.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--talavera-dark)"><path d="M10 16h28l-3 20a3 3 0 0 1-3 3H16a3 3 0 0 1-3-3z"/><path d="M17 16a7 7 0 0 1 14 0"/></svg>
+          <h4>Takeout</h4>
+          <p>Call ahead and your order's ready when you get here.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" style="color:var(--cactus)"><circle cx="13" cy="38" r="3"/><circle cx="35" cy="38" r="3"/><path d="M6 8h5l5 24h20l4-16H15"/></svg>
+          <h4>Delivery</h4>
+          <p>Brought straight to your door, still hot off the pit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What we're serving</h2>
+        <p>A sampling of the plates regulars order most, served with rice and charro beans unless noted. Ask your server about daily specials.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-cat">
+          <h3>Antojitos</h3>
+          <div class="menu-item"><span class="mi-name">Queso &amp; Chips<span class="mi-desc">Melted cheese dip, warm tortilla chips</span></span><span class="mi-price">$6</span></div>
+          <div class="menu-item"><span class="mi-name">Guacamole<span class="mi-desc">Made fresh to order</span></span><span class="mi-price">$7</span></div>
+          <div class="menu-item"><span class="mi-name">Beef Nachos<span class="mi-desc">Piled high with beans, cheese &amp; jalapeños</span></span><span class="mi-price">$10</span></div>
+        </div>
+        <div class="menu-cat">
+          <h3>Enchiladas &amp; Platters</h3>
+          <div class="menu-item"><span class="mi-name">Cheese Enchiladas (3)<span class="mi-desc">Topped with chili gravy</span></span><span class="mi-price">$11</span></div>
+          <div class="menu-item"><span class="mi-name">Chicken Fajitas<span class="mi-desc">Grilled peppers &amp; onions, tortillas</span></span><span class="mi-price">$15</span></div>
+          <div class="menu-item"><span class="mi-name">Beef Tacos (3)<span class="mi-desc">Soft or crispy</span></span><span class="mi-price">$11</span></div>
+          <div class="menu-item"><span class="mi-name">Chile Relleno Plate<span class="mi-desc">Two, hand-battered</span></span><span class="mi-price">$13</span></div>
+        </div>
+        <div class="menu-cat">
+          <h3>From the Pit</h3>
+          <div class="menu-item"><span class="mi-name">Sliced Brisket Plate<span class="mi-desc">Half pound, smoked daily</span></span><span class="mi-price">$16</span></div>
+          <div class="menu-item"><span class="mi-name">St. Louis Ribs<span class="mi-desc">Half rack</span></span><span class="mi-price">$17</span></div>
+          <div class="menu-item"><span class="mi-name">Smoked Sausage Plate<span class="mi-desc">House link, jalapeño</span></span><span class="mi-price">$13</span></div>
+          <div class="menu-item"><span class="mi-name">Two-Meat Combo<span class="mi-desc">Pick any two off the pit</span></span><span class="mi-price">$18</span></div>
+        </div>
+        <div class="menu-cat">
+          <h3>Sides &amp; Drinks</h3>
+          <div class="menu-item"><span class="mi-name">Spanish Rice</span><span class="mi-price">$3</span></div>
+          <div class="menu-item"><span class="mi-name">Charro Beans</span><span class="mi-price">$3</span></div>
+          <div class="menu-item"><span class="mi-name">Elote (Mexican Street Corn)</span><span class="mi-price">$4</span></div>
+          <div class="menu-item"><span class="mi-name">Jarritos</span><span class="mi-price">$3</span></div>
+          <div class="menu-item"><span class="mi-name">Horchata</span><span class="mi-price">$4</span></div>
+        </div>
+      </div>
+      <p class="menu-note">Menu shown is representative of the restaurant's Tex-Mex and barbecue offerings; call ahead at (817) 332-0168 to confirm current items and pricing.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What Fort Worth is saying</h2>
+      </div>
+      <div class="review-top">
+        <div class="score">4.5</div>
+        <div class="score-meta">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>Based on 458 Google reviews</p>
+        </div>
+      </div>
+      <div class="review-cards">
+        <div class="review-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>The queso alone is worth the drive across town, and the brisket plate doesn't disappoint either.</p>
+          <span class="who">— Regular guest, Fort Worth</span>
+        </div>
+        <div class="review-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>Feels like eating at family's house — big portions, no attitude, and the enchiladas are the real deal.</p>
+          <span class="who">— Regular guest, South Main</span>
+        </div>
+        <div class="review-card">
+          <span class="stars" aria-hidden="true">★★★★☆</span>
+          <p>Ordered takeout on a Friday night and it was ready right on time. The two-meat combo is a great value.</p>
+          <span class="who">— Regular guest, Fort Worth</span>
+        </div>
+      </div>
+      <p class="review-disclaimer">Quotes above are illustrative examples written for this page design. See current guest reviews on Google or Facebook.</p>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="hours">
+    <div class="wrap loc-grid">
+      <div class="info-card">
+        <h3>Hours &amp; contact</h3>
+        <table class="hours-table">
+          <tbody>
+            <tr class="today"><td>Monday</td><td>Closed</td></tr>
+            <tr><td>Tuesday</td><td>11:00 AM – 9:00 PM</td></tr>
+            <tr><td>Wednesday</td><td>11:00 AM – 9:00 PM</td></tr>
+            <tr><td>Thursday</td><td>11:00 AM – 9:00 PM</td></tr>
+            <tr><td>Friday</td><td>11:00 AM – 9:00 PM</td></tr>
+            <tr><td>Saturday</td><td>11:00 AM – 9:00 PM</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.82rem; color:#856a52; margin-top:14px;">Hours can change on holidays — call ahead to confirm.</p>
+
+        <div style="margin-top:22px; display:flex; flex-direction:column; gap:14px;">
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>810 S Main St, Fort Worth, TX 76104</span>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.3a16 16 0 0 0 6 6l1.5-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:+18173320168">(817) 332-0168</a>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <a href="https://www.facebook.com/JesusBBQ/" target="_blank" rel="noopener">facebook.com/JesusBBQ</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <strong style="font-family:'Alfa Slab One'; font-weight:400; display:block; margin-bottom:6px; color:var(--chile-dark);">810 S Main St</strong>
+          <span style="color:#5b4636; font-size:0.92rem;">Fort Worth, TX 76104</span>
+        </div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Jes%C3%BAs+Family+Restaurant+810+S+Main+St+Fort+Worth+TX+76104" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="name">Jesús Family Restaurant</span>
+        <p>Tex-Mex &amp; barbecue on South Main. Se habla español.</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h5>Visit</h5>
+          <a href="#menu">Menu</a>
+          <a href="#about">About</a>
+          <a href="#hours">Hours &amp; Location</a>
+        </div>
+        <div>
+          <h5>Contact</h5>
+          <a href="tel:+18173320168">(817) 332-0168</a>
+          <a href="https://www.facebook.com/JesusBBQ/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Jes%C3%BAs+Family+Restaurant+810+S+Main+St+Fort+Worth+TX+76104" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Jesús Family Restaurant · 810 S Main St, Fort Worth, TX 76104</span>
+      <span>Designed as a sample site — replace with your own photos &amp; copy.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
